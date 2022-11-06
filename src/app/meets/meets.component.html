@@ -1,0 +1,62 @@
+<div class="container">
+  <br>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+      <span class="fs-4">Prueba Desarrollo</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="/room" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="/acts" class="nav-link">Acts</a></li>
+      <li class="nav-item"><a href="/meets" class="nav-link">Meets</a></li>
+      <li class="nav-item"><a href="/room" class="nav-link">Rooms</a></li>
+      
+    </ul>
+  </header>
+
+
+  <p></p>
+  <br>
+  <div class="container-fluid">
+    <button class="btn btn-info" type="button" [routerLink]="['/meets/form']"> Nuevo Meets</button>
+  </div>
+  <p></p>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Num Meets</th>
+        <th scope="col">Num Acts</th>
+        <th scope="col">id Room</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let meets of meetss">
+        <th scope="row">{{meets.num_meets}}</th>
+        <td>
+          <ul>
+            <li *ngFor="let item of actss">
+              {{item.num_acts}}
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li *ngFor="let item of rooms">
+              {{item.id_room}}
+            </li>
+          </ul>
+        </td>
+        <td><button type="button" name="button" class="btn btn-primary"
+            [routerLink]="['/meets/form/', meets.num_meets]">EDITAR</button></td>
+        <td><button class="btn btn-danger" (click)="delete(meets)">ELIMINAR</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

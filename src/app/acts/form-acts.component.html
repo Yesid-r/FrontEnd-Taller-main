@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <form>
+            <br>
+            <div class="form-group row">
+                <label for="num_acts" class="col-form-label col-sm-2">Num Acts</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" name="num_acts" [(ngModel)]="actss.num_acts"
+                        placeholder="Ingresa el numero de la acts" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="fecha" class="col-form-label col-sm-2">Fecha</label>
+                <div class="col-sm-6">
+                    <input type="date" class="form-control" placeholder="dd-MM-yyyy" name="fecha"
+                        [(ngModel)]="actss.fecha" placeholder="Ingresa la fecha de la acts" required>
+                </div>
+            </div>
+            <br>
+
+            <button class="btn btn-success" role="button" (click)='create()'> REGISTRAR ACTA</button>
+
+
+            <button class="btn btn-info" role="button" (click)='update()'> MODIFICAR ACTA</button>
+
+
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card-body">
+        <h5 class="card-title">{{titulo}}</h5>
+        <form>
+            <br>
+            <div class="form-group row">
+                <label for="id_meets" class="col-form-label col-sm-2">Num Meets</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" name="id_meets" [(ngModel)]="meets.num_meets"
+                        autocomplete="number" placeholder="Ingresa el numero de id" required>
+                </div>
+            </div>        
+
+            <br>
+            <div class="form-group row">
+                <label for="stock" class="col-form-label col-sm-2">Num Acts</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="stock" [(ngModel)]="meets.num_acts"
+                        placeholder="Ingresa el numero de Stock" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <label for="stock" class="col-form-label col-sm-2">Id Room</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="stock" [(ngModel)]="meets.id_room"
+                        placeholder="Ingresa el numero de Stock" required>
+                </div>
+            </div>
+
+            <br>
+            <button class="btn btn-success" role="button" (click)='create()' value="SUBMIT"> REGISTRAR REUNION</button>
+
+
+            <button class="btn btn-info" role="button" (click)='update()'> MODIFICAR REUNION</button>
+
+
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+  <br>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+      <span class="fs-4">Prueba Desarrollo</span>
+    </a>
+
+    <ul class="nav nav-pills">
+      <li class="nav-item"><a href="/room" class="nav-link active" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="/acts" class="nav-link">Acts</a></li>
+      <li class="nav-item"><a href="/meets" class="nav-link">Meets</a></li>
+      <li class="nav-item"><a href="/room" class="nav-link">Rooms</a></li>
+      
+    </ul>
+  </header>
+
+
+  <p></p>
+  <br>
+  <div class="container-fluid">
+    <button class="btn btn-info" type="button" [routerLink]="['/room/form']"> Nuevo Room</button>
+  </div>
+  <p></p>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id Room</th>
+        <th scope="col">Lugar</th>
+        <th scope="col">Editar</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of room">
+        <th scope="row">{{room.id_room}}</th>
+        <td>{{room.lugar}}</td>
+        <td><button type="button" name="button" class="btn btn-primary"
+            [routerLink]="['/room/form/', room.id_room]">EDITAR</button></td>
+        <td><button class="btn btn-danger" (click)="delete(room)">ELIMINAR</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
